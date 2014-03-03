@@ -4,6 +4,8 @@ omnibus Cookbook
 
 Prepares a machine to be an Omnibus builder.
 
+This project is managed by the CHEF Release Engineering team. For more information on the Release Engineering team's contribution, triage, and release process, please consult the [CHEF Release Engineering OSS Management Guide](https://docs.google.com/a/opscode.com/document/d/1oJB0vZb_3bl7_ZU2YMDBkMFdL-EWplW1BJv_FXTUOzg/edit).
+
 Requirements
 ------------
 ### Chef
@@ -78,6 +80,19 @@ Attributes
 Usage
 -----
 Include the `omnibus::default` recipe in your node's run list and override the cookbook's default attributes as desired. At the very least you will want to override `node['omnibus']['install_dir']` to match the installation directory of your Omnibus project.
+
+
+Testing
+-------
+You can run the tests in this cookbook using Rake:
+
+```text
+rake integration  # Run Test Kitchen integration tests
+rake style        # Run all style checks
+rake style:chef   # Lint Chef cookbooks
+rake style:ruby   # Run Ruby style checks
+rake travis:ci    # Run tests on Travis
+```
 
 
 License & Authors
